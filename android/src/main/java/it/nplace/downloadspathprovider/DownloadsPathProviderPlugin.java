@@ -16,7 +16,7 @@ public class DownloadsPathProviderPlugin implements MethodCallHandler {
      * Plugin registration.
      */
     public static void registerWith(Registrar registrar) {
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "downloads_path_provider");
+        final MethodChannel channel = new MethodChannel(registrar.messenger(), "downloads_path_provider_28");
         channel.setMethodCallHandler(new DownloadsPathProviderPlugin());
     }
 

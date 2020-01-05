@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:downloads_path_provider/downloads_path_provider.dart';
+import 'package:downloads_path_provider_28/downloads_path_provider_28.dart';
 
 void main() => runApp(new MyApp());
 

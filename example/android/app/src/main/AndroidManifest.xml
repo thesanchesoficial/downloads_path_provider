@@ -14,7 +14,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="downloads_path_provider_example"
+        android:label="downloads_path_provider_28_example"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
