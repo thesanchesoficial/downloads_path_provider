@@ -4,7 +4,8 @@ version: 0.1.1
 homepage: https://github.com/chitgoks/downloads_path_provider
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  flutter: ">=1.12.0"
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -12,5 +13,9 @@ dependencies:
 
 flutter:
   plugin:
-    androidPackage: it.nplace.downloadspathprovider
-    pluginClass: DownloadsPathProviderPlugin
+    platforms:
+      ios:
+        pluginClass: FlutterBlePeripheralPlugin
+      android:
+        package: it.nplace.downloadspathprovider
+        pluginClass: FlutterBlePeripheralPlugin
