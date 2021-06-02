@@ -10,3 +10,7 @@
 ## 0.1.0
 
 * iOS support added
+
+## 0.1.1
+
+* Some iOS fixes
