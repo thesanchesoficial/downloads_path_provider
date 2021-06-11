@@ -15,7 +15,7 @@ flutter:
   plugin:
     platforms:
       ios:
-        pluginClass: FlutterBlePeripheralPlugin
+        pluginClass: DownloadsPathProviderPlugin
       android:
         package: it.nplace.downloadspathprovider
-        pluginClass: FlutterBlePeripheralPlugin
+        pluginClass: DownloadsPathProviderPlugin
