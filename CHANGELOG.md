@@ -14,3 +14,7 @@
 ## 0.1.1
 
 * Some iOS fixes
+
+## 0.1.2
+
+* Some minor corrections.
