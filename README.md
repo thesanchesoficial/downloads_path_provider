@@ -1,24 +1,15 @@
-# downloads_path_provider_28
+# downloads_path_provider
 
-Flutter plugin to get the downloads directory.  
-
-> This plugin has lots of inconsistencies and should no **longer be used**. Feel free to fork and tweak it.
+A new flutter plugin project.
 
 ## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+This project is a starting point for a Flutter
+[plug-in package](https://flutter.dev/developing-packages/),
+a specialized package that includes platform-specific implementation code for
+Android and/or iOS.
 
-For help on editing plugin code, view the [documentation](https://flutter.io/developing-packages/#edit-plugin-package).
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
 
-## Usage
-
-  * Add [downloads_path_provider_28](https://pub.dartlang.org/packages/downloads_path_provider_28#-installing-tab-) as a dependency in your pubspec.yaml file.
-  * Add `<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />` to your `AndroidManifest.xml`
-
-## Example
-```dart
-import 'package:downloads_path_provider_28/downloads_path_provider_28.dart';  
-
-Future<Directory> downloadsDirectory = DownloadsPathProvider.downloadsDirectory;
-```

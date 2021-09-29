@@ -1,25 +1,15 @@
 #import "DownloadsPathProviderPlugin.h"
+#if __has_include(<downloads_path_provider/downloads_path_provider-Swift.h>)
+#import <downloads_path_provider/downloads_path_provider-Swift.h>
+#else
+// Support project import fallback if the generated compatibility header
+// is not copied when this plugin is created as a library.
+// https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
+#import "downloads_path_provider-Swift.h"
+#endif
 
 @implementation DownloadsPathProviderPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"downloads_path_provider_28"
-            binaryMessenger:[registrar messenger]];
-  DownloadsPathProviderPlugin* instance = [[DownloadsPathProviderPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
+  [SwiftDownloadsPathProviderPlugin registerWithRegistrar:registrar];
 }
-
-- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-  if ([call.method isEqualToString:@"getDownloadsDirectory"]) {
-    result([self getDownloadsDirectory]);
-  } else {
-    result(FlutterMethodNotImplemented);
-  }
-}
-
-- (NSString*)getDownloadsDirectory {
-  NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES);
-  return paths.firstObject;
-}
-
 @end

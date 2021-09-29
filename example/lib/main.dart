@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:downloads_path_provider_28/downloads_path_provider_28.dart';
+import 'package:downloads_path_provider/downloads_path_provider.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  Directory _downloadsDirectory;
+  Directory? _downloadsDirectory;
 
   @override
   void initState() {
@@ -24,7 +26,7 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initDownloadsDirectoryState() async {
-    Directory downloadsDirectory;
+    Directory? downloadsDirectory;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       downloadsDirectory = await DownloadsPathProvider.downloadsDirectory;
@@ -44,15 +46,15 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: const Text('Downloads Directiry example app'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Downloads Directory example app'),
         ),
-        body: new Center(
-          child: new Text(
+        body: Center(
+          child: Text(
             _downloadsDirectory != null
-                ? 'Downloads directory: ${_downloadsDirectory.path}\n'
+                ? 'Downloads directory: ${_downloadsDirectory?.path}\n'
                 : 'Could not get the downloads directory',
           ),
         ),
