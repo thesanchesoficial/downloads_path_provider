@@ -1,34 +1,29 @@
-group 'com.example.downloads_path_provider'
-version '1.0-SNAPSHOT'
-
 buildscript {
-    ext.kotlin_version = '1.9.0'
+    ext.kotlin_version = '1.9.0' // Variável para versões
+
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.android.tools.build:gradle:8.1.1' // Gradle Plugin moderno
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+plugins {
+    id 'com.android.library' // Biblioteca Android
+    id 'kotlin-android'      // Suporte ao Kotlin
 }
 
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-}
+// Declarações de metadados após `plugins {}`
+group 'com.example.downloads_path_provider'
+version '1.0-SNAPSHOT'
 
 android {
     compileSdkVersion 34
-    namespace = "com.example.downloads_path_provider"
+    namespace = "com.example.downloads_path_provider" // Namespace obrigatório
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
